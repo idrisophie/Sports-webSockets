@@ -15,7 +15,7 @@ export const matchIdParamSchema = z.object({
 });
 
 const isDateString = z.string().refine(
-    (val) => !isNaN(Date.parse(val)),
+    (val) => !Number.isNaN(Date.parse(val)),
     {
         message: "Invalid ISO date string",
     }
